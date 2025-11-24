@@ -20,39 +20,12 @@ void	ft_init_mlx(t_graphics *graphics)
 		perror("Error\nFailed to initialize MLX\n");
 		exit (1);
 	}
-}
-
-void	ft_load_images(t_graphics *graphics)
-{
-	graphics->img_background = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/background.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_wall = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/wall.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_collect = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/collectible.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_exit = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/exit.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_player = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/player.xpm",
-			&graphics->img_size, &graphics->img_size);
-	if (!graphics->img_background || !graphics->img_wall
-		|| !graphics->img_collect || !graphics->img_exit
-		|| !graphics->img_player)
-	{
-		ft_destroy_images(graphics);
-		perror("Error\nFailed to load images\n");
-		exit (1);
-	}
-}
-
-void	ft_put_image(t_graphics *graphics, void *img, int x, int y)
-{
-	mlx_put_image_to_window(graphics->mlx, graphics->win, img,
-		x * graphics->img_size, y * graphics->img_size);
+	graphics->img_background = NULL;
+	graphics->img_wall = NULL;
+	graphics->img_collect = NULL;
+	graphics->img_exit = NULL;
+	graphics->img_player = NULL;
+	graphics->win = NULL;
 }
 
 void	ft_render_map(t_graphics *graphics, t_map *map)

@@ -54,13 +54,12 @@ void	ft_init_map(t_map *map)
 void	ft_flood_fill(t_map *map, int x, int y)
 {
 	if (x < 0 || y < 0 || x >= map->dimensions.x || y >= map->dimensions.y
-		|| map->map[y][x] == '1' || map->map[y][x] == 'F'
-		|| map->map[y][x] == ENEMY)
+		|| map->map[y][x] == '1' || map->map[y][x] == 'F')
 		return ;
 	if (map->map[y][x] == 'C')
 		map->collect--;
 	if (map->map[y][x] == 'E')
-		map->exit = 1;
+		map->exit++;
 	map->map[y][x] = 'F';
 	ft_flood_fill(map, x + 1, y);
 	ft_flood_fill(map, x - 1, y);

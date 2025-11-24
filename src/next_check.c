@@ -69,6 +69,7 @@ void	ft_check_transitable_map(t_map *map)
 	pos.x = map->pos.x;
 	pos.y = map->pos.y;
 	map_copy = ft_duplicate_map(map);
+	map_copy.exit = 0;
 	ft_flood_fill(&map_copy, pos.x, pos.y);
 	if (map_copy.collect > 0 || map_copy.exit == 0)
 		map_transitable_error(map, &map_copy);

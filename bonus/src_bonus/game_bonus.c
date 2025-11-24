@@ -53,6 +53,15 @@ void	ft_init_mlx(t_graphics *graphics)
 		perror("Error\nFailed to initialize MLX\n");
 		exit (1);
 	}
+	graphics->img_background = NULL;
+	graphics->img_wall = NULL;
+	graphics->img_collect = NULL;
+	graphics->img_exit = NULL;
+	graphics->img_player = NULL;
+	graphics->win = NULL;
+	graphics->img_enemy = NULL;
+	graphics->map = NULL;
+	graphics->img_size = 0;
 }
 
 void	ft_the_game(t_graphics *graphics, t_map *map)

@@ -21,7 +21,8 @@ SRCS = $(SOURCE_DIR)/so_long.c\
 	   $(SOURCE_DIR)/next_check.c \
 	   $(SOURCE_DIR)/graphics.c \
 	   $(SOURCE_DIR)/moves.c \
-	   $(SOURCE_DIR)/destroy_images.c
+	   $(SOURCE_DIR)/destroy_images.c \
+	   $(SOURCE_DIR)/images.c
 
 OBJS = $(SRCS:$(SOURCE_DIR)/%.c=$(OBJECT_DIR)/%.o)
 

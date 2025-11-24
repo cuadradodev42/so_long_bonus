@@ -31,11 +31,12 @@ void	ft_check_transitable_map(t_map *map)
 	pos2.x = map->player2_pos.x;
 	pos2.y = map->player2_pos.y;
 	map_copy = ft_duplicate_map(map);
+	map_copy.exit = 0;
 	ft_flood_fill(&map_copy, pos.x, pos.y);
 	if (map_copy.collect > 0 || map_copy.exit == 0)
 		map_transitable_error(map, &map_copy);
-	map->collect = collect_num;
-	map->exit = 0;
+	map_copy.collect = collect_num;
+	map_copy.exit = 0;
 	ft_flood_fill(&map_copy, pos2.x, pos2.y);
 	if (map_copy.collect > 0 || map_copy.exit == 0)
 		map_transitable_error(map, &map_copy);
