@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_bonus.c                                      :+:      :+:    :+:   */
+/*   moves_1_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acuadrad <acuadrad@student.42malaga.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-11-23 16:14:44 by acuadrad          #+#    #+#             */
-/*   Updated: 2025-11-23 16:14:44 by acuadrad         ###   ########.fr       */
+/*   Created: 2025-11-25 14:40:15 by acuadrad          #+#    #+#             */
+/*   Updated: 2025-11-25 14:40:15 by acuadrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 int	ft_manage_keypress(int key, t_graphics *graphics)
