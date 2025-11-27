@@ -15,20 +15,16 @@
 
 void	ft_load_player_images(t_graphics *graphics)
 {
-	graphics->img_player = malloc(4 * sizeof(void *));
+	graphics->img_player = ft_calloc(4, sizeof(void *));
 	if (!graphics->img_player)
 	{
 		perror("Error\nMemory allocation failed");
 		exit (1);
 	}
-	graphics->img_player[0] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/up.xpm", &graphics->img_size, &graphics->img_size);
-	graphics->img_player[1] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/down.xpm", &graphics->img_size, &graphics->img_size);
-	graphics->img_player[2] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/left.xpm", &graphics->img_size, &graphics->img_size);
-	graphics->img_player[3] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/right.xpm", &graphics->img_size, &graphics->img_size);
+	ft_load_image(graphics, &graphics->img_player[0], "assets/player_up.xpm");
+	ft_load_image(graphics, &graphics->img_player[1], "assets/player_down.xpm");
+	ft_load_image(graphics, &graphics->img_player[2], "assets/player_left.xpm");
+	ft_load_image(graphics, &graphics->img_player[3], "assets/player_right.xpm");
 	if (!graphics->img_player[0] || !graphics->img_player[1]
 		|| !graphics->img_player[2] || !graphics->img_player[3])
 	{
@@ -40,20 +36,16 @@ void	ft_load_player_images(t_graphics *graphics)
 
 void	ft_load_enemy_images(t_graphics *graphics)
 {
-	graphics->img_enemy = malloc(4 * sizeof(void *));
+	graphics->img_enemy = ft_calloc(4, sizeof(void *));
 	if (!graphics->img_enemy)
 	{
 		perror("Error\nMemory allocation failed");
 		exit (1);
 	}
-	graphics->img_enemy[0] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/enemy_up.xpm", &graphics->img_size, &graphics->img_size);
-	graphics->img_enemy[1] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/enemy_down.xpm", &graphics->img_size, &graphics->img_size);
-	graphics->img_enemy[2] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/enemy_left.xpm", &graphics->img_size, &graphics->img_size);
-	graphics->img_enemy[3] = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/enemy_right.xpm", &graphics->img_size, &graphics->img_size);
+	ft_load_image(graphics, &graphics->img_enemy[0], "assets/enemy_up.xpm");
+	ft_load_image(graphics, &graphics->img_enemy[1], "assets/enemy_down.xpm");
+	ft_load_image(graphics, &graphics->img_enemy[2], "assets/enemy_left.xpm");
+	ft_load_image(graphics, &graphics->img_enemy[3], "assets/enemy_right.xpm");
 	if (!graphics->img_enemy[0] || !graphics->img_enemy[1]
 		|| !graphics->img_enemy[2] || !graphics->img_enemy[3])
 	{

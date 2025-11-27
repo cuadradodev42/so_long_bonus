@@ -142,5 +142,6 @@ void	ft_put_players(t_graphics *graphics, t_map *map);
 
 void	ft_destroy_images(t_graphics *graphics);
 void	ft_close(t_graphics *graphics, char *msg);
+void	ft_load_image(t_graphics *graphics, void **img_ptr, char *path);
 
 #endif

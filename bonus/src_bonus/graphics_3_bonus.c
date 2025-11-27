@@ -81,3 +81,11 @@ void	ft_player_on_exit(t_graphics *graphics, int new_x, int new_y)
 			map->on_exit = 1;
 	}
 }
+
+void	ft_load_image(t_graphics *graphics, void **img_ptr, char *path)
+{
+	*img_ptr = mlx_xpm_file_to_image(graphics->mlx, path,
+			&graphics->img_size, &graphics->img_size);
+	if (!*img_ptr)
+		ft_close(graphics, "Error\nFailed to load image\n");
+}
