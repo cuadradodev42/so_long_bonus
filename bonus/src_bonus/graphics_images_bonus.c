@@ -57,18 +57,11 @@ void	ft_load_enemy_images(t_graphics *graphics)
 
 void	ft_load_images(t_graphics *graphics)
 {
-	graphics->img_background = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/background.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_wall = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/wall.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_collect = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/collectible.xpm",
-			&graphics->img_size, &graphics->img_size);
-	graphics->img_exit = mlx_xpm_file_to_image(graphics->mlx,
-			"assets/exit.xpm",
-			&graphics->img_size, &graphics->img_size);
+	ft_load_image(graphics, &graphics->img_background,
+		"assets/background.xpm");
+	ft_load_image(graphics, &graphics->img_wall, "assets/wall.xpm");
+	ft_load_image(graphics, &graphics->img_collect, "assets/collectible.xpm");
+	ft_load_image(graphics, &graphics->img_exit, "assets/exit.xpm");
 	ft_load_player_images(graphics);
 	ft_load_enemy_images(graphics);
 	if (!graphics->img_background || !graphics->img_wall
